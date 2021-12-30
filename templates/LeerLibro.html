@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-1-tablet is-1-desktop is-9-widescreen">
+            <form action="/leerlibro" method="post">
+                <p>{{db}}</p>
+              <table class="table">
+                <caption>{% for libros in constlta %}</caption>
+                <thead>
+                  <tr>
+                    <th>     Titulo     </th>
+                    <th>     F.Publicacion    </th>
+                    <th>     Num. paginas    </th>
+                    <th>     Formato    </th>
+                    <th>     Vol.    </th>
+                    <th>     Editorial    </th>
+                    <th>     Genero    </th>
+                    <th>     Autor    </th>
+                    
+                    <th>               </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{libros.titulo_libro}}</td>
+                    <td>{{libros.fecha_publicacion}}</td>
+                    <td>{{libros.numero_paginas}}</td>
+                    <td>{{libros.formato}}</td>
+                    <td>{{libros.volumen}}</td>
+                    <td>{{libros.id_editorial}}</td>
+                    <td>{{libros.id_genero}}</td>
+                    <td>{{libros.id_autor}}</td>
+                    <td><a href="/eliminarLibro/{{libros.id_libro}}">Eliminar</a>
+                    <a href="/editarLibro/{{libros.id_libro}}">EDITAR</a>
+                  </tr>
+                  {% endfor %}
+                  
+                </tbody>
+              </table>
+            
+            {% for nombre in variable %}
+            <p>
+              {{nombre}}
+            </p>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}

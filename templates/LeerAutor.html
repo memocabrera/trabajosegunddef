@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container is-fullhd">
+        <div class="columns is-centered ">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <form action="/leerAutor" method="post">
+                <p>{{db}}</p>
+              <table class="table">
+                <caption>{% for autores in constlta %}</caption>
+                <thead>
+                  <tr>
+                    <th><abbr title="Played">Nombre</abbr></th>
+                    <th><abbr title="Won">Fecha</abbr></th>
+                    <th><abbr title="Drawn">Nacionalidad</abbr></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>{{autores.nombre_autor}}</th>
+                    <td>{{autores.fecha_nac}}
+                    </td>
+                    <td>{{autores.nacionalidad}}</td>
+                    <td><a href="/eliminarautor/{{autores.id_autor}}">Eliminar</a>
+                      <a href="/editarautor/{{autores.id_autor}}">EDITAR</a>
+                    {% endfor %}
+                  </tr>
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    </div>
+  </section>
+  
+
+  {% endblock %}

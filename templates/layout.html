@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <title>
+            {% block title %}
+
+            {% endblock %}
+        </title>
+        <div class="tabs is-centered">
+          <ul>
+            <li class="is-active"><a href="login.html">Home</a></li>
+            <li><a href="/libro">Libro</a></li>
+            <li><a href="/autor">Autor</a></li>
+            <li><a href="/genero">Genero</a></li>
+            <li><a href="/editorial">Editorial</a></li>
+            <li><a href="/favoritos">Mis Favoritos</a></li>
+          </ul>
+          <ul><li><a href="/">Cerrar sesion</a></li></ul>
+        </div>
+    {% endblock %}
+</head>
+
+<body>
+<div id="content">
+    {% block content %}
+    
+    {% endblock %}
+</div>
+
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2021 by <a href="">Cesar Guillermo Cabrera Alcaraz</a>
+    {% endblock %}
+    </div>
+</body>
+</html>

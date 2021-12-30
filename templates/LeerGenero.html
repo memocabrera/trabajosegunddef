@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-5-desktop is-3-widescreen">
+            <form action="/leerGenero" method="post">
+                <p>{{db}}</p>
+              <table class="table">
+                <caption>{% for generos in constlta %}</caption>
+                <thead>
+                  <tr>
+                    <th>     Genero    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{generos.nombre_genero}}</td>
+                    <td><a href="/eliminargenero/{{generos.id_genero}}">Eliminar</a>
+                      <a href="/editargenero/{{generos.id_genero}}">Editar</a>
+                  </tr>
+                  {% endfor %}
+                  
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
